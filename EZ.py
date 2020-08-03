@@ -47,10 +47,12 @@ data = {  "entity": "performance_metrics_by_node",  "entity_id": "N2"}
 
 headers = {
     'Content-Type': "application/json",
-	'Accept': "application/json",
-	'Accept-Language': 'en-US',
+    'Accept': "application/json",
+    'Accept-Language': 'en-US',
     'DELL-EMC-TOKEN': token
 }
 
 url = endpoint + api
 response2 = requests.post(url, headers=headers, json=data, cookies=res.cookies, verify=False)
+payload2 = json.loads(response2.text)
+
